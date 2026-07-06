@@ -1,11 +1,30 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
+    {
+      "src": "public",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "src": "/hadi.jpeg", "dest": "/hadi.jpeg", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
-    { "src": "/music.mpeg", "dest": "/music.mpeg", "headers": { "cache-control": "public, max-age=31536000, immutable", "content-type": "audio/mpeg" } },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/music.mpeg",
+      "dest": "/music.mpeg",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "audio/mpeg"
+      }
+    },
+    {
+      "src": "/hadi.jpeg",
+      "dest": "/hadi.jpeg",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
